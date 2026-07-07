@@ -3,14 +3,12 @@ published: true
 type: workshop
 title: "Spec-Driven Development: Building & Modernizing with Agentic AI"
 short_title: "SDD: Build & Modernize with Agentic AI"
-description: A hands-on, full-day lab on Spec-Driven Development (SDD) for building new software and modernizing existing code. Tool-agnostic where possible; hands-on with GitHub Copilot, the GitHub Copilot CLI and Claude Code.
+description: A hands-on, full-day lab on Spec-Driven Development (SDD) for building new software and modernizing existing code. Guided hands-on with GitHub Copilot, the GitHub Copilot CLI and Claude Code.
 level: intermediate
 authors:
   - Julia Kordick
-  - Artur Speth
 contacts:
   - "@jkordick"
-  - "@aspeth"
 duration_minutes: 420
 tags: GitHub, Copilot, Claude Code, AI, Agents, Spec-Driven Development, SDD, Modernization, TypeScript, Node, CLI
 navigation_levels: 3
@@ -21,26 +19,26 @@ navigation_numbering: true
 
 *WeAreDevelopers Full-Day Hands-On Lab — 2026 Edition*
 
-Welcome! This full-day, hands-on lab is about **Spec-Driven Development (SDD)** — a discipline for making the *specification*, not the *vibe*, drive what an agentic AI builds. We look at SDD both for **greenfield builds** and for **modernizing existing code**.
+Welcome! This full-day, hands-on lab is about **Spec-Driven Development (SDD)**: a discipline for making the *specification*, not the *vibe*, drive what an agentic AI builds. We look at SDD both for **greenfield builds** and for **modernizing existing code**.
 
-We deliberately keep the lab **open at the agentic-AI-tool level**. The market has coalesced around three dominant surfaces today, and the SDD workflow works with all of them:
+This lab is **open at the agentic-AI-tool level**, but will cover hands-on instructions and exercises for the three currently dominant surfaces:
 
-- **GitHub Copilot in VS Code** — inline completions, Chat (Ask + Agent), custom agents, prompt files, skills, MCP.
-- **GitHub Copilot CLI** — the same power in your terminal, always agentic.
-- **Claude Code** — Anthropic's terminal-first coding agent, also with IDE integration and its own conventions.
+- **GitHub Copilot in VS Code**
+- **GitHub Copilot CLI**
+- **Claude Code**
 
-Wherever the tools differ in name, path or invocation, you will see a **parallel callout** for each one so you can follow along on whichever surface is available to you.
+Wherever the tools differ in name, path or invocation, you will see a **parallel callout** for each one so you can follow along on whichever surface is available to you. If you want to bring your own agentic coding tool, this workshop expects you to be able to adapt it. The SDD workflow and app modernization approach described in this workshop is tool-agnostic.
 
 Agenda:
 
-1. **Getting Started with Agentic Coding**: a single broad chapter for anyone who has never (or barely) used an agentic AI coding tool. Covers completions, chat, agent mode, terminal agents, project-level instructions, reusable prompts / commands, custom agents / subagents, skills and MCP — across GitHub Copilot, the Copilot CLI and Claude Code.
+1. **Getting Started with Agentic Coding** (optional): a single broad chapter for anyone who has never (or barely) used an agentic AI coding tool. Covers completions, chat, agent mode, terminal agents, project-level instructions, reusable prompts / commands, custom agents / subagents, skills and MCP. (est. 10-20min, only to read through or as reference)
 2. **Spec-Driven Development (SDD)**: You learn how to make specifications drive what the agent builds, end-to-end, on a small TypeScript/Node feature.
 3. **[spec-kit](https://github.com/github/spec-kit)** as a toolkit that formalizes the SDD loop across many agentic coding tools (Copilot, Claude, Cursor, Codex, …).
-4. (dedicated hands-on) **SDD for app modernization**: a full lab on how to use SDD to modernize legacy apps. *Details filled in separately — see Chapter 4.*
+4. **SDD for app modernization**: a full lab on how to use SDD to modernize legacy apps.
 
 <div class="info" data-title="Who is this for?">
 
-> Developers, tech leads and architects who want to bring their agentic AI skills to the next level — for both greenfield work and modernization. No prior experience with any specific tool is required, but recommended. Chapter 1 is designed to get you productive on all three surfaces fast.
+> Developers, tech leads and architects who want to bring their agentic AI skills to the next level — for both greenfield work and modernization. Prior experience with any agentic coding tool is highly recommended. Chapter 1 exists for reference.
 
 </div>
 
@@ -59,26 +57,28 @@ You need the following before starting:
 |                                 |                                                                                |
 | ------------------------------- | ------------------------------------------------------------------------------ |
 | A GitHub account                | [Create free GitHub account](https://github.com/join)                          |
+| Node.js 20+ and npm             | [Install](https://nodejs.org)                                                  |
+| A terminal                      | Any modern shell (bash, zsh, pwsh)                                             |
 | GitHub Copilot access           | Free, Pro, Business or Enterprise — see below                                  |
 | Visual Studio Code              | [Download](https://code.visualstudio.com/)                                     |
 | GitHub Copilot extension(s)     | [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat) |
-| Node.js 20+ and npm             | [Install](https://nodejs.org)                                                  |
+| ***OR*** Claude Code access | [Install `@anthropic-ai/claude-code`](https://docs.claude.com/en/docs/claude-code/overview) — requires an Anthropic account with Claude Code access |
 | GitHub CLI                      | [Install](https://cli.github.com/)                                             |
 | GitHub Copilot CLI              | [Install](https://github.com/github/copilot-cli)                               |
-| Claude Code (optional but recommended) | [Install `@anthropic-ai/claude-code`](https://docs.claude.com/en/docs/claude-code/overview) — requires an Anthropic account with Claude Code access |
-| A terminal                      | Any modern shell (bash, zsh, pwsh)                                             |
 | A fork of this repo             | [Fork this repo](https://github.com/jkordick/wad-sdd-build-modernize/fork) and clone your fork locally — you will need the `user-stories/` files for the hands-on exercises |
 
 ![Fork repository](assets/fork.png)
 
 ### Getting agent access
 
+We can provide you GitHub Copilot access.
+
 - **GitHub Copilot (Individual Free/Pro):** sign up at [github.com/github-copilot/signup](https://github.com/github-copilot/signup). Through your organization: [github.com/settings/copilot](https://github.com/settings/copilot).
 - **Claude Code:** requires an Anthropic account with Claude Code entitlement (via Claude Pro/Max, an API key with billing, or an enterprise plan). See the [Claude Code setup docs](https://docs.claude.com/en/docs/claude-code/setup).
 
 <div class="info" data-title="Enterprise organization check">
 
-> Some features in this lab (Agent mode, MCP, the Copilot CLI, spec-kit, Claude Code) may be restricted by your organization's policy. Every chapter is **independently useful**; skip what you cannot use, and pick whichever agent surface you *can* use.
+> Some features in this lab (models, MCP, the Copilot CLI, spec-kit, Claude Code) may be restricted by your organization's policy if you are using a device managed by your organization. Every chapter is **independently useful**; skip what you cannot use, and pick whichever agent surface you *can* use.
 
 </div>
 
